@@ -1,0 +1,1 @@
+sudo cat /var/log/suricata/eve.json | jq 'select ( .alert != null) | .alert' > alerts.txt

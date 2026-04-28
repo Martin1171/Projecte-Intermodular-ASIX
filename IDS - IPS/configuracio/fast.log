@@ -1,0 +1,15 @@
+04/28/2026-13:41:10.973592  [**] [1:1000002:1] [ALERTA]: ET SCAN Nmap -sS detectat [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:49575 -> 192.168.100.21:21
+04/28/2026-13:41:10.980321  [**] [1:1000001:1] [ALERTA]: Connexió sospitosa cap al port SSH [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:49575 -> 192.168.100.21:22
+04/28/2026-13:41:10.980321  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:49575 -> 192.168.100.21:80
+04/28/2026-13:41:25.459653  [**] [1:1000001:1] [ALERTA]: Connexió sospitosa cap al port SSH [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:35752 -> 192.168.100.21:22
+04/28/2026-13:43:40.033848  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50392 -> 192.168.100.21:80
+04/28/2026-13:43:40.033848  [**] [1:1000002:1] [ALERTA]: ET SCAN Nmap -sS detectat [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50392 -> 192.168.100.21:80
+04/28/2026-13:43:40.042720  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50400 -> 192.168.100.21:80
+04/28/2026-13:43:40.054768  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50406 -> 192.168.100.21:80
+04/28/2026-13:43:40.068417  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50422 -> 192.168.100.21:80
+04/28/2026-13:43:40.082027  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50434 -> 192.168.100.21:80
+04/28/2026-13:43:40.091651  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50436 -> 192.168.100.21:80
+04/28/2026-13:43:40.105166  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50442 -> 192.168.100.21:80
+04/28/2026-13:43:40.105167  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50444 -> 192.168.100.21:80
+04/28/2026-13:43:40.122220  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50454 -> 192.168.100.21:80
+04/28/2026-13:43:40.122220  [Drop] [**] [1:1000030:0] Connexió sospitosa port 80 [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.100.22:50466 -> 192.168.100.21:80

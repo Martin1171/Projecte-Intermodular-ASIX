@@ -1,0 +1,26 @@
+# Posible força bruta PostgreSQL
+alert tcp any any -> any 5432 (msg:"[ALERTA]: Possible força bruta a PostgreSQL"; flags:S; flow:not_established,to_server; threshold: type both, track by_src, count 5, seconds 60; sid:1000006; rev:1;)
+
+# SQLmap detectat (User-Agent)
+alert http any any -> any any (msg:"[ALERTA]: SQLmap detectat (User-Agent)"; content:"sqlmap"; nocase; http_user_agent; sid:1000004; rev:1;)
+
+# Nmap scan detectat
+alert tcp any any -> any any (msg:"[ALERTA]: ET SCAN Nmap -sS detectat"; flags:S; threshold: type both, track by_dst, count 1, seconds 60; sid:1000002; rev:1;)
+
+# Conexió sospechosa SSH
+alert tcp any any -> any 22 (msg:"[ALERTA]: Connexió sospitosa cap al port SSH"; sid:1000001; rev:1;)
+
+# Injecció SQL simple
+alert http any any -> any any (msg:"[ALERTA]: Possible injecció SQL detectada"; content:"' OR 1=1 --"; nocase; sid:1000003; rev:1;)
+
+# POSSIBLE SQLmap detectaT
+alert tcp any any -> any any (msg:"[ALERTA]: POSSIBLE SQLmap detectat"; content:"sqlmap"; nocase; sid:1000014;)
+
+# Conexió sospechosa HTTP 80
+drop tcp any any -> any 80 (msg:"Connexió sospitosa port 80"; sid:1000030;)
+
+# SQLmap bloquejat per User-Agent
+drop http any any -> any any (msg:"[BLOQUEJAT]: SQLmap bloquejat"; content:"sqlmap"; nocase; http_user_agent; sid:1000010; rev:1;)
+
+# Força bruta PostgreSQL
+drop tcp any any -> any 5432 (msg:"[BLOQUEJAT]: Força bruta PostgreSQL"; flags:S; flow:not_established,to_server; threshold: type both, track by_src, count 5, seconds 60; sid:1000011; rev:1;)
