@@ -1,0 +1,56 @@
+---
+- name: Demostració de conditionals i gestió d'errors
+  hosts: ansible_cliente
+  become: true
+
+  tasks:
+    # Conditional basat en sistema operatiu
+    - name: Configuració específica per Ubuntu 24.04
+      copy:
+        content: "# Configuració específica per Ubuntu 24.04"
+        dest: /etc/nginx/conf.d/ubuntu_specific.conf
+      when: ansible_distribution == "Ubuntu" and ansible_distribution_version >= "24.04"
+
+    # Conditional per comprovar si el servei està actiu
+    - name: Comprovar si Nginx està actiu
+      command: systemctl is-active nginx
+      register: nginx_status
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Informar de l'estat de Nginx
+      debug:
+        msg: "Nginx està {{ 'actiu' if nginx_status.rc == 0 else 'inactiu' }}"
+
+    # Block amb Rescue (try-catch)
+    - name: Intentar fer backup amb recuperació d'errors
+      block:
+        - name: Provar de fer backup
+          command: tar -czf /backup/web_backup.tar.gz /var/www/html/
+          register: backup_result
+
+        - name: Confirmar backup exitós
+          debug:
+            msg: " Backup creat correctament"
+      
+      rescue:
+        - name: Si falla, crear directori i reintentar
+          file:
+            path: /backup
+            state: directory
+            mode: '0755'
+
+        - name: Reintentar backup després de crear directori
+          command: tar -czf /backup/web_backup.tar.gz /var/www/html/
+          register: retry_result
+
+        - name: Notificar error si torna a fallar
+          fail:
+            msg: " No s'ha pogut crear el backup malgrat els intents"
+          when: retry_result is failed
+
+      always:
+        - name: Netejar fitxer temporal
+          file:
+            path: /backup/web_backup.tar.gz
+            state: absent
