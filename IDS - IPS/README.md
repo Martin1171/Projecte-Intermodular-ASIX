@@ -3,7 +3,7 @@
 Aquest repositori conté la implementació d'un sistema IDS/IPS utilitzant **Suricata** en un entorn de laboratori virtual.
 L'objectiu es simular una xarxa real, detectar atacs, generar alertes i aplicar mecanismes de prevenció.
 
-## 📌 Estructura del repositorii
+## 📌 Estructura del repositori
 
 ```
 ├── README.md
