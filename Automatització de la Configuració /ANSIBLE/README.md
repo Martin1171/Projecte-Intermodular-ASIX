@@ -195,7 +195,7 @@ Tot això de forma automatitzada i repetible.
 
 # 👨‍💻 Autor
 
-Projecte realitzat per a **ASIX (Administració de Sistemes Informàtics en Xarxa)**
+Projecte realitzat per Shayan Ali Kousar
 
 ---
 
