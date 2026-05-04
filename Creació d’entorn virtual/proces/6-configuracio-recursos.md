@@ -36,7 +36,7 @@ Des de la configuració de la VM → Processador → Assignar 2 vCPU
 Des de la configuració de la VM → Memòria:
 - **RAM inicial:** 4096 MB
 - **RAM mínima:** 2048 MB
-- **RAM màxima:** 8192 MB
+- **RAM màxima:** 6144 MB
 - **Memòria dinàmica:** Activada
 
 ![Configurar RAM dinàmica](../captures/recursos/02-configurar-ram-dinamica.png)
