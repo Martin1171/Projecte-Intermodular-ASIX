@@ -18,14 +18,7 @@
 │   └── index.html.j2
 ├── inventory/
 │   └── hosts
-└── docs/
-    ├── instalacio.md
-    ├── configuracio.md
-    ├── aprovisionament.md
-    ├── seguretat.md
-    ├── desplegament.md
-    ├── configuracio_avancada.md
-    └── conclusions.md
+
 ```
 
 ---
