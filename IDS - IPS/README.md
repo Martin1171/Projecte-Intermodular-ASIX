@@ -63,3 +63,6 @@ Els fitxers dins de `configuracio/` inclouen:
 - `fast.log` — exemple de logs generats.
 - `eve.log` — exemple de logs generats.
 - `enviar_alerta` — codi de Python per alertes.
+
+## 📹 Demo
+[Veure video](https://drive.google.com/file/d/1mOc_mHjPM_IY_DGM8kK0eECS46Z1kyKf/view?usp=sharing)
