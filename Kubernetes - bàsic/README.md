@@ -1,4 +1,4 @@
-# 🛒 ShopMicro – Plataforma de Microserveis amb Docker, Swarm i Kubernetes
+# ShopMicro – Plataforma de Microserveis amb Docker, Swarm i Kubernetes
 
 Aquest projecte és una plataforma d’e-commerce simplificada construïda amb una arquitectura de **microserveis**, utilitzant:
 
@@ -21,7 +21,7 @@ Aquest README és una **visió global** del projecte.
 
 ---
 
-# 📌 1. Objectiu del projecte
+# 1. Objectiu del projecte
 
 L’objectiu és construir una aplicació realista basada en microserveis, aprenent:
 
@@ -36,7 +36,7 @@ L’objectiu és construir una aplicació realista basada en microserveis, apren
 
 ---
 
-# 🧱 2. Arquitectura general
+# 2. Arquitectura general
 
 Els microserveis principals són:
 
@@ -53,7 +53,7 @@ Els microserveis principals són:
 
 ---
 
-# 🐳 3. Fase 1 – Desenvolupament amb Docker Compose
+# 3. Fase 1 – Desenvolupament amb Docker Compose
 
 En aquesta fase es crea tota l’estructura del projecte:
 
@@ -92,7 +92,7 @@ Funcionalitats implementades:
 
 ---
 
-# 🔐 5. Fase 3 – Seguretat
+# 5. Fase 3 – Seguretat
 
 Millores aplicades:
 
@@ -114,7 +114,7 @@ S’han analitzat totes les imatges Docker.
 
 ---
 
-# ☸️ 6. Fase 4 – Migració a Kubernetes (Minikube)
+# 6. Fase 4 – Migració a Kubernetes (Minikube)
 
 S’ha migrat tota la plataforma a Kubernetes:
 
@@ -135,7 +135,7 @@ S’ha migrat tota la plataforma a Kubernetes:
 
 ---
 
-# 🌐 7. Accés al sistema (Kubernetes)
+# 7. Accés al sistema (Kubernetes)
 
 Frontend:
 ```
@@ -149,7 +149,7 @@ http://192.168.10.10:30080
 
 ---
 
-# 📂 8. Estructura del repositori
+# 8. Estructura del repositori
 
 ```
 /
