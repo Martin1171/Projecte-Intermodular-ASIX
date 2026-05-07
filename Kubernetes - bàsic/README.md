@@ -69,7 +69,7 @@ A `proces/` trobaràs tots els passos detallats.
 
 ---
 
-# 🐝 4. Fase 2 – Docker Swarm (Alta disponibilitat)
+# 4. Fase 2 – Docker Swarm (Alta disponibilitat)
 
 S’han creat **tres màquines virtuals**:
 
