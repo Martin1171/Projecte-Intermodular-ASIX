@@ -161,8 +161,19 @@ http://192.168.10.10:30080
 │   ├── 005_kubernetes.md
 │   └── ...
 │
-├── configuracio/
-│   ├── docker-compose.yml
+├── shopmicro/
+│   ├── api-gateway/
+│   │   ├── app.py
+│   │   ├── Dockerfile
+│   ├── frontend/
+│   │   ├── app.py
+│   │   ├── Dockerfile
+│   ├── order-service/
+│   │   ├── app.py
+│   │   ├── Dockerfile
+│   ├── product-service/
+│   │   ├── app.py
+│   │   ├── Dockerfile
 │   ├── stack.yml
 │   ├── k8s/
 │   │   ├── api-gateway-deployment.yaml
