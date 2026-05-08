@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+
+  api-gateway:
+    image: api-gateway:latest
+    ports:
+      - "8000:8000"
+    networks:
+      - shopmicro_net
+    secrets:
+      - db_root_password
+
+  product-service:
+    image: product-service:latest
+    networks:
+      - shopmicro_net
+    secrets:
+      - db_root_password
+
+  order-service:
+    image: order-service:latest
+    networks:
+      - shopmicro_net
+    secrets:
+      - db_root_password
+
+  frontend:
+    image: frontend:latest
+    ports:
+      - "8080:443"
+    networks:
+      - shopmicro_net
+
+networks:
+  shopmicro_net:
+    external: true
+
+secrets:
+  db_root_password:
+    external: true
