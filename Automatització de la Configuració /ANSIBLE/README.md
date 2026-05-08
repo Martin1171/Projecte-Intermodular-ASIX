@@ -3,9 +3,14 @@
 
 # 📌 Estructura del repositori
 
-```
+ansible-project/
 ├── README.md
-├── demo.mp4
+├── demo/
+│   └── demo.mp4
+│
+├── inventory/
+│   └── hosts
+│
 ├── playbooks/
 │   ├── playbook_aprovisionament.yml
 │   ├── playbook_seguretat.yml
@@ -13,11 +18,30 @@
 │   ├── playbook_configuracio.yml
 │   ├── playbook_variables.yml
 │   ├── playbook_loops.yml
-│   └── playbook_handlers.yml
+│   ├── playbook_handlers.yml
+│   ├── playbook_tags.yml
+│   └── playbook_conditionals.yml
+│
 ├── templates/
-│   └── index.html.j2
-├── inventory/
-│   └── hosts
+│   ├── index.html.j2
+│   └── config.json.j2
+│
+├── screenshots/
+│   ├── ping-ansible.png
+│   ├── nginx-web.png
+│   ├── playbook-success.png
+│   └── inventory-config.png
+│
+├── docs/
+│   ├── instalacio.md
+│   ├── configuracio.md
+│   ├── aprovisionament.md
+│   ├── seguretat.md
+│   ├── desplegament.md
+│   ├── configuracio-avancada.md
+│   └── conclusions.md
+│
+└── LICENSE
 
 ```
 
