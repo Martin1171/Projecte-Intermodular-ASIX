@@ -5,10 +5,8 @@ ansible-project/
 ├── README.md
 ├── demo/
 │   └── demo.mp4
-│
 ├── inventory/
 │   └── hosts
-│
 ├── playbooks/
 │   ├── playbook_aprovisionament.yml
 │   ├── playbook_seguretat.yml
@@ -19,17 +17,14 @@ ansible-project/
 │   ├── playbook_handlers.yml
 │   ├── playbook_tags.yml
 │   └── playbook_conditionals.yml
-│
 ├── templates/
 │   ├── index.html.j2
 │   └── config.json.j2
-│
 ├── screenshots/
 │   ├── ping-ansible.png
 │   ├── nginx-web.png
 │   ├── playbook-success.png
 │   └── inventory-config.png
-│
 ├── docs/
 │   ├── instalacio.md
 │   ├── configuracio.md
@@ -38,7 +33,6 @@ ansible-project/
 │   ├── desplegament.md
 │   ├── configuracio-avancada.md
 │   └── conclusions.md
-│
 └── LICENSE
 
 ---
