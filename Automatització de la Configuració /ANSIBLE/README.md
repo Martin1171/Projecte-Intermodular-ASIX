@@ -1,8 +1,6 @@
 
 ---
 
-# 📌 Estructura del repositori
-
 ansible-project/
 ├── README.md
 ├── demo/
@@ -42,8 +40,6 @@ ansible-project/
 │   └── conclusions.md
 │
 └── LICENSE
-
-```
 
 ---
 
