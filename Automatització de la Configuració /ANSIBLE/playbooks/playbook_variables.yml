@@ -1,0 +1,30 @@
+---
+- name: Demostració de variables i facts
+  hosts: ansible_cliente
+  become: true
+  vars:
+    app_name: "WebApp"
+    app_version: "2.0.1"
+    backup_retention_days: 7
+    admin_email: "admin@empresa.com"
+
+  tasks:
+    # Crear variable dinàmica amb timestamp
+    - name: Crear variable amb timestamp
+      set_fact:
+        backup_timestamp: "{{ ansible_date_time.date }}_{{ ansible_date_time.time | replace(':', '') }}"
+
+    # Utilitzar variables en templates
+    - name: Crear fitxer de configuració dinàmic
+      template:
+        src: ~/config.json.j2
+        dest: "/var/www/html/config_{{ app_version }}.json"
+
+    # Configurar neteja de backups amb variable
+    - name: Configurar neteja automàtica de backups
+      cron:
+        name: "Neteja backups antics"
+        hour: "3"
+        minute: "0"
+        job: "find /backup -name '*.tar.gz' -mtime +{{ backup_retention_days }} -delete"
+        state: present

@@ -1,0 +1,55 @@
+---
+- name: Configuració de seguretat del sistema
+  hosts: ansible_cliente
+  become: true
+
+  tasks:
+
+    - name: Actualitzar paquets de seguretat
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Instal·lar UFW (firewall)
+      apt:
+        name: ufw
+        state: present
+
+    - name: Permetre connexions SSH
+      ufw:
+        rule: allow
+        port: 22
+        proto: tcp
+
+    - name: Permetre HTTP
+      ufw:
+        rule: allow
+        port: 80
+        proto: tcp
+
+    - name: Permetre HTTPS
+      ufw:
+        rule: allow
+        port: 443
+        proto: tcp
+
+    - name: Activar UFW
+      ufw:
+        state: enabled
+
+    - name: Desactivar login root per SSH
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: 'PermitRootLogin no'
+
+    - name: Desactivar autenticació per password
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+
+    - name: Reiniciar servei SSH
+      service:
+        name: ssh
+        state: restarted

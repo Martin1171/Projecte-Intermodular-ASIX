@@ -1,0 +1,51 @@
+---
+- name: Demostració d'handlers i notificacions
+  hosts: ansible_cliente
+  become: true
+
+  tasks:
+    - name: Configurar keepalive_timeout a Nginx
+      lineinfile:
+        path: /etc/nginx/nginx.conf
+        regexp: '^(\s*)#?keepalive_timeout\s+'
+        line: '\1keepalive_timeout 120;'
+        backrefs: yes
+      notify:
+        - validar_configuracio
+        - reiniciar_nginx
+
+    - name: Configurar worker_connections
+      lineinfile:
+        path: /etc/nginx/nginx.conf
+        regexp: '^(\s*)#?worker_connections\s+'
+        line: '\1worker_connections 1024;'
+        backrefs: yes
+      notify:
+        - validar_configuracio
+        - reiniciar_nginx
+
+    - name: Afegir configuració de seguretat personalitzada
+      copy:
+        content: |
+          # Configuració de seguretat avançada
+          add_header X-Frame-Options "SAMEORIGIN" always;
+          add_header X-Content-Type-Options "nosniff" always;
+          add_header X-XSS-Protection "1; mode=block" always;
+        dest: /etc/nginx/conf.d/security.conf
+      notify:
+        - validar_configuracio
+        - reiniciar_nginx
+
+  handlers:
+    - name: validar_configuracio
+      listen: "reiniciar_nginx"
+      command: nginx -t
+      register: result
+      failed_when: result.rc != 0
+      changed_when: false
+
+    - name: reiniciar_nginx
+      listen: "reiniciar_nginx"
+      service:
+        name: nginx
+        state: restarted
