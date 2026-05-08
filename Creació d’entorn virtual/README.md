@@ -68,4 +68,7 @@ Els fitxers dins de `proces/` documenten cada fase del projecte amb **captures d
 - **5-emmagatzematge.md** — Creació de discs VHDX i disc de dades.
 - **6-configuracio-recursos.md** — Assignació de CPU i RAM a les VMs.
 
+## 📹 Demo
+[Veure video](https://drive.google.com/file/d/10SZqgWAS_Lf7QodMgnJFHOfuFmG7CttT/view?usp=sharing)
+
 Les **captures de pantalla** es troben dins de la carpeta `captures/` organitzades per subcarpetes segons cada fase del projecte.
